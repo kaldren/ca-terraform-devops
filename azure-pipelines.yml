@@ -1,0 +1,39 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+pool:
+  name: 'Default'
+
+variables:
+  rgName: 'rg-terraform'
+  saName: '[YOUR STORAGE ACCOUNT NAME]'
+  sacName: 'tfsettings'
+  stateFileName: 'dev.terraform.tfstate'
+
+steps:
+  - task: TerraformInstaller@1
+    displayName: tfinstall
+    inputs:
+      terraformVersion: 'latest'
+  - task: TerraformTaskV4@4
+    displayName: init
+    inputs:
+      provider: 'azurerm'
+      command: 'init'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
+      backendServiceArm: 'Pay-As-You-Go([YOUR SUBSCRIPTION ID])'
+      backendAzureRmResourceGroupName: '$(rgName)'
+      backendAzureRmStorageAccountName: '$(saName)'
+      backendAzureRmContainerName: '$(sacName)'
+      backendAzureRmKey: '$(stateFileName)'
+  - task: TerraformTaskV4@4
+    displayName: apply
+    inputs:
+      provider: 'azurerm'
+      command: 'apply'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
+      environmentServiceNameAzureRM: 'Pay-As-You-Go([YOUR SUBSCRIPTION ID])'
