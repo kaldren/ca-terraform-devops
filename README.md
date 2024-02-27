@@ -1,4 +1,4 @@
-# Terraform Azure Nginx VM
+# Provisioning an Ubuntu VM with Nginx on Azure Using Terraform and Azure DevOps
 This repository contains the source code accompanying my article on ChooseAzure.com, titled ["Provision an Ubuntu VM with Nginx on Azure using Terraform and Azure DevOps"](https://chooseazure.com/p/provisioning-an-ubuntu-vm-with-nginx). It demonstrates using Infrastructure as Code (IaC) to provision and manage Azure resources, including a Virtual Machine running Nginx.
 
 # Overview
