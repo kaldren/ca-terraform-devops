@@ -12,4 +12,4 @@ The codebase includes Terraform configurations for setting up a complete Azure e
 2. Follow the article's guide to set up Azure and Azure DevOps prerequisites.
 
 # Article
-For detailed instructions, walkthroughs, and explanations, please refer to the full article on [ChooseAzure.com]([https://chooseazure.com](https://chooseazure.com/p/provisioning-an-ubuntu-vm-with-nginx)https://chooseazure.com/p/provisioning-an-ubuntu-vm-with-nginx).
+For detailed instructions, walkthroughs, and explanations, please refer to the full article on [ChooseAzure.com](https://chooseazure.com/p/provisioning-an-ubuntu-vm-with-nginx).
